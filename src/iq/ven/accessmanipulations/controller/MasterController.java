@@ -54,6 +54,8 @@ public class MasterController implements Initializable {
     Button accessPanelReadButton;
     @FXML
     Button accessPanelWriteButton;
+    @FXML
+    Button accessPanelLoginButton;
 
     /* Admin panel components */
     @FXML

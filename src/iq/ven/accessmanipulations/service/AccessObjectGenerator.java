@@ -33,7 +33,7 @@ public class AccessObjectGenerator {
     }
 
     private String generateData() {
-        char[] dataChars = new char[random.nextInt(20) + 5];
+        char[] dataChars = new char[random.nextInt(10) + 5];
         for (int i = 0; i < dataChars.length; i++) {
             dataChars[i] = (char) (random.nextInt(26) + 'a');
         }
