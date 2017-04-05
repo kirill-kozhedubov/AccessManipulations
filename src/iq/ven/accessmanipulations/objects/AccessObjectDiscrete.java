@@ -9,7 +9,7 @@ import java.util.Set;
 /**
  * Created by netcracker on 30.03.2017.
  */
-public class AccessObjectDiscrete implements AccessObject{
+public class AccessObjectDiscrete implements AccessObject {
     private StringBuffer data;
     private int id;
     private Set<User> usersAbleToRead;
@@ -55,7 +55,7 @@ public class AccessObjectDiscrete implements AccessObject{
             return true;
         }
         for (User reader : usersAbleToRead) {
-            if  (user.equals(reader)) {
+            if (user.equals(reader)) {
                 return true;
             }
         }
@@ -67,11 +67,19 @@ public class AccessObjectDiscrete implements AccessObject{
             return true;
         }
         for (User writer : usersAbleToWrite) {
-          if  (user.equals(writer)) {
-              return true;
-          }
+            if (user.equals(writer)) {
+                return true;
+            }
         }
         return false;
+    }
+
+    public Set<User> getUsersAbleToRead() {
+        return usersAbleToRead;
+    }
+
+    public Set<User> getUsersAbleToWrite() {
+        return usersAbleToWrite;
     }
 
     @Override

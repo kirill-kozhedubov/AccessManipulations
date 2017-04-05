@@ -54,7 +54,7 @@
                                 <Bloom />
                             </effect>
                         </Label>
-                        <VBox prefHeight="83.0" prefWidth="162.0" spacing="5.0" style="-fx-border-color: darkred;">
+                        <VBox prefHeight="83.0" prefWidth="162.0" spacing="5.0" style="-fx-border-color: red;">
                             <children>
                                 <Label text="User generator" underline="true" />
                                 <TextField fx:id="userGeneratorAmountTextField" promptText="Amount" />
@@ -72,7 +72,7 @@
                                 <Insets bottom="5.0" />
                             </VBox.margin>
                         </VBox>
-                        <VBox layoutX="10.0" layoutY="27.0" prefHeight="96.0" prefWidth="162.0" spacing="5.0" style="-fx-border-color: darkred;">
+                        <VBox layoutX="10.0" layoutY="27.0" prefHeight="96.0" prefWidth="162.0" spacing="5.0" style="-fx-border-color: red;">
                             <children>
                                 <Label text="Access object generator" underline="true" />
                                 <TextField fx:id="accessObjectAmountTextField" promptText="Amount" />
@@ -105,7 +105,12 @@
                               <Label fx:id="accessPanelLoginLabel" text=" not logged in" />
                            </children>
                         </HBox>
-                        <TextField fx:id="accessPanelIdTextField" maxWidth="150.0" prefHeight="25.0" prefWidth="150.0" />
+                        <HBox>
+                           <children>
+                              <TextField fx:id="accessPanelIdTextField" maxWidth="150.0" prefHeight="25.0" prefWidth="100.0" promptText="User id" />
+                              <Button mnemonicParsing="false" prefWidth="50.0" text="OK" />
+                           </children>
+                        </HBox>
                         <HBox prefHeight="27.0" prefWidth="190.0">
                            <children>
                                       <Button fx:id="accessPanelReadButton" mnemonicParsing="false" prefWidth="75.0" text="Read" />

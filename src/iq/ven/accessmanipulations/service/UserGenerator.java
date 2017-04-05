@@ -57,6 +57,21 @@ public class UserGenerator {
 
             }
         }
+
+/*  //access object test matrix
+        for (int i = 0; i < accessObjectDiscreteList.size(); i++) {
+            AccessObject accessObject = accessObjectDiscreteList.get(i);
+            System.out.println("Access object: " + accessObject);
+            for (User user : accessObject.getUsersAbleToRead()) {
+                System.out.println("\tRead: " + user);
+            }
+            for (User user : accessObject.getUsersAbleToWrite()) {
+                System.out.println("\tWrite: " + user);
+            }
+        }
+*/
+
+
     }
 
     private List<Integer> getListOfRandomUsers(int userAmount) {

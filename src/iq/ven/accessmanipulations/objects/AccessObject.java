@@ -2,6 +2,8 @@ package iq.ven.accessmanipulations.objects;
 
 import iq.ven.accessmanipulations.users.User;
 
+import java.util.Set;
+
 /**
  * Created by User on 05.04.2017.
  */
@@ -23,4 +25,9 @@ public interface AccessObject {
     boolean removeRead(User user);
 
     boolean removeWrite(User user);
+
+/*   //access object test matrix
+ Set<User> getUsersAbleToRead();
+
+    Set<User> getUsersAbleToWrite();*/
 }
