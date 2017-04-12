@@ -23,7 +23,7 @@ public class UserGeneratorController {
     private Button generateAccessMatrixButton;
     private UserGenerator userGenerator;
 
-    public UserGeneratorController(ListView<User> usersListView, ListView<AccessObject> objectsListView, TextField userGeneratorAmountTextField, Button generateAccessMatrixButton, Button generateUsersButton) {
+     UserGeneratorController(ListView<User> usersListView, ListView<AccessObject> objectsListView, TextField userGeneratorAmountTextField, Button generateAccessMatrixButton, Button generateUsersButton) {
         this.generateAccessMatrixButton = generateAccessMatrixButton;
         this.usersListView = usersListView;
         this.objectsListView = objectsListView;

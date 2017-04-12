@@ -74,8 +74,23 @@ public class MasterController implements Initializable {
 
     @Override
     public void initialize(URL fxmlFileLocation, ResourceBundle resources) {
-        ObjectGeneratorController objectGeneratorController = new ObjectGeneratorController(objectsListView, accessObjectAmountTextField, generateObjectsButton, mandateCheckBox);
-        UserGeneratorController userGeneratorController = new UserGeneratorController(usersListView, objectsListView, userGeneratorAmountTextField, generateAccessMatrixButton, generateUsersButton);
+        setUpListeners();
+
+        ObjectGeneratorController objectGeneratorController =
+                new ObjectGeneratorController(objectsListView, accessObjectAmountTextField,
+                        generateObjectsButton, mandateCheckBox);
+        UserGeneratorController userGeneratorController =
+                new UserGeneratorController(usersListView, objectsListView,
+                        userGeneratorAmountTextField, generateAccessMatrixButton, generateUsersButton);
+        AccessPanelController accessPanelController = new AccessPanelController(
+                accessPanelLoginLabel, accessPanelAnswerLabel,
+                accessPanelIdTextField, accessPanelReadButton,
+                accessPanelWriteButton, accessPanelLoginButton,
+                usersListView, objectsListView);
+        AdminPanelController adminPanelController = new AdminPanelController(adminReadButton, adminWriteButton,
+                adminGiveReadButton, adminGiveWriteButton,
+                adminChangeLvlButton, adminChangeLvlTextField,
+                usersListView, objectsListView, accessPanelController);
 
         UserGenerator userGenerator = new UserGenerator();
         List<User> userList = userGenerator.generateUserList(10);
@@ -88,12 +103,18 @@ public class MasterController implements Initializable {
         ObservableList<AccessObject> observableAccessObjects = FXCollections.observableArrayList(accessObjects);
         objectsListView.setItems(observableAccessObjects);
 
-
+/*
         objectsListView.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
             System.out.println("old:" + oldValue + "\nnew:" + newValue);
-        });
+        });*/
 
 
     }
 
+    private void setUpListeners() {
+        objectsListView.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
+        });
+        usersListView.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
+        });
+    }
 }

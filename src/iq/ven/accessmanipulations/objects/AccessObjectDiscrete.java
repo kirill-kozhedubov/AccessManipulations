@@ -51,6 +51,9 @@ public class AccessObjectDiscrete implements AccessObject {
     }
 
     public boolean canUserRead(User user) {
+        if (user == null) {
+            return false;
+        }
         if (user instanceof Admin) {
             return true;
         }
@@ -63,6 +66,9 @@ public class AccessObjectDiscrete implements AccessObject {
     }
 
     public boolean canUserWrite(User user) {
+        if (user == null) {
+            return false;
+        }
         if (user instanceof Admin) {
             return true;
         }

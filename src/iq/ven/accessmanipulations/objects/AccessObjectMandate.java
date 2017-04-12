@@ -31,6 +31,9 @@ public class AccessObjectMandate implements AccessObject {
 
     @Override
     public boolean canUserRead(User user) {
+        if (user == null) {
+            return false;
+        }
         if (user.getRights() >= accessLevelToRead) {
             return true;
         }
@@ -39,6 +42,9 @@ public class AccessObjectMandate implements AccessObject {
 
     @Override
     public boolean canUserWrite(User user) {
+        if (user == null) {
+            return false;
+        }
         if (user.getRights() >= accessLevelToRead) {
             return true;
         }
